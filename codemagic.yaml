@@ -5,6 +5,8 @@ workflows:
     instance_type: mac_mini
     environment:
       node: latest
+      ndk: r21d         # Define default or revision (e.g., r19c)
+      java: 1.8  
     triggering:
       events:
         - push
