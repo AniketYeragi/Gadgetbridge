@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="nodomain.freeyourgadget.gadgetbridge.activities.GemtecDebugActivity">
+
+    <ImageView
+        android:id="@+id/no_items_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha="0.1"
+        android:contentDescription="@string/icon_placeholder"
+        app:tint="?attr/textColorPrimary"
+        app:srcCompat="@drawable/ic_nc_systems" />
+
+<RelativeLayout
+        android:id="@+id/InnerRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/gemtec_info"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/gemtec_info"
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/device_info"
+            android:text="@string/device_info" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/gemtec_info"
+            android:layout_width="fill_parent"
+            android:layout_height="22dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_alignBottom="@id/device_info" />   
+
+        <TextView
+            android:id="@+id/fall_counter_title"
+            android:text="@string/fall_counter_title" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/device_info"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/fall_counter"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/device_info"
+            android:layout_toRightOf="@+id/fall_counter_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />  
+
+        <TextView
+            android:id="@+id/min_g_title"
+            android:text="G-force min:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/fall_counter_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/min_g_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/fall_counter_title"
+            android:layout_toRightOf="@+id/min_g_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/max_g_title"
+            android:text="G-force max:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/min_g_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/max_g_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/min_g_title"
+            android:layout_toRightOf="@+id/max_g_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/init_press_diff_title"
+            android:text="Diff Pressure:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/max_g_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/init_press_diff_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/max_g_title"
+            android:layout_toRightOf="@+id/init_press_diff_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/diff1_title"
+            android:text="Diff1:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/init_press_diff_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/diff1_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/init_press_diff_title"
+            android:layout_toRightOf="@+id/diff1_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/diff2_title"
+            android:text="Diff2:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/diff1_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/diff2_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/diff1_title"
+            android:layout_toRightOf="@+id/diff2_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/diff3_title"
+            android:text="Diff3:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/diff2_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/diff3_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/diff2_title"
+            android:layout_toRightOf="@+id/diff3_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+            
+        <TextView
+            android:id="@+id/BLE_counter_title"
+            android:text="BLE Counter:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/diff3_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/BLE_counter_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/diff3_title"
+            android:layout_toRightOf="@+id/BLE_counter_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/vibration_counter_title"
+            android:text="Vibration Counter:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/BLE_counter_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/vibration_counter_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/BLE_counter_title"
+            android:layout_toRightOf="@+id/vibration_counter_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/beeper_counter_title"
+            android:text="Beeper Counter:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/vibration_counter_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/beeper_counter_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/vibration_counter_title"
+            android:layout_toRightOf="@+id/beeper_counter_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/RSSI_title"
+            android:text="RSSI:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/beeper_counter_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/RSSI_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/beeper_counter_title"
+            android:layout_toRightOf="@+id/RSSI_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/distance_title"
+            android:text="Estimated distance:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/RSSI_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/RSSI_distance_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/RSSI_title"
+            android:layout_toRightOf="@+id/distance_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/battery_voltage_title"
+            android:text="Battery Voltage:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/distance_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/battery_voltage_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/distance_title"
+            android:layout_toRightOf="@+id/battery_voltage_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/last_fall_title"
+            android:text="Thresholds at last fall" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/battery_voltage_title"
+            android:layout_marginTop="20dp"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/min_g_last_title"
+            android:text="G-force min:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/last_fall_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/min_g_last_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/last_fall_title"
+            android:layout_toRightOf="@+id/min_g_last_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/max_g_last_title"
+            android:text="G-force max:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/min_g_last_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/max_g_last_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/min_g_last_title"
+            android:layout_toRightOf="@+id/max_g_last_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/press_diff_title"
+            android:text="Pressure diff at fall:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/max_g_last_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/press_diff_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/max_g_last_title"
+            android:layout_toRightOf="@+id/press_diff_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+    </RelativeLayout>  
+
+</RelativeLayout>

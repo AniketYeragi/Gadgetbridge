@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2"
+    tools:showIn="@layout/activity_controlcenterv2_app_bar_main">
+
+    <ImageView
+        android:id="@+id/no_items_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha="0.1"
+        android:tint="?attr/textColorPrimary"
+        app:srcCompat="@drawable/ic_nc_systems" />
+
+    <RelativeLayout
+        android:id="@+id/InnerRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/gemtec_info"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/gemtec_info"
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/device_info"
+            android:text="@string/device_info" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/gemtec_info"
+            android:layout_width="fill_parent"
+            android:layout_height="22dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_alignBottom="@id/device_info" />   
+
+        <TextView
+            android:id="@+id/mac_address_title"
+            android:text="@string/mac_address_title" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/device_info"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/mac_address"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/device_info"
+            android:layout_toRightOf="@+id/mac_address_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />       
+
+        <TextView
+            android:id="@+id/fall_counter_title"
+            android:text="@string/fall_counter_title" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/mac_address_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/fall_counter"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/mac_address_title"
+            android:layout_toRightOf="@+id/fall_counter_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />  
+
+        <TextView
+            android:id="@+id/battery_voltage_title"
+            android:text="Battery Voltage:" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/fall_counter_title"
+            android:layout_height="22dp"
+            android:layout_width="160dp" />
+
+        <TextView
+            android:id="@+id/battery_voltage_val"
+            android:text="-" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_below="@id/fall_counter_title"
+            android:layout_toRightOf="@+id/battery_voltage_title"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp"
+            android:layout_width="0dp" />
+
+    </RelativeLayout>  
+
+    <RelativeLayout
+        android:id="@+id/InnerRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <TextView
+            android:id="@+id/emergency_contact_list"
+            android:text="@string/emergency_contact_list" 
+            android:textStyle="bold"
+            android:textColor="@color/secondarytext"
+            android:layout_width="fill_parent"
+            android:layout_height="22dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_alignBottom="@id/emergency_contact_list" />    
+
+        <ListView
+            android:id="@+id/mobile_name_list"
+            android:layout_width="160dp"
+            android:layout_below="@id/emergency_contact_list"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content" >
+        </ListView>
+
+        <!-- <TextView
+            android:id="@+id/number"
+            android:text="Number:" 
+            android:layout_width="0dp"
+            android:layout_below="@id/emergency_contact_list"
+            android:layout_toRightOf="@+id/name"
+            android:layout_alignParentRight="true"
+            android:layout_height="22dp" /> -->
+
+        <ListView
+            android:id="@+id/mobile_number_list"
+            android:layout_toRightOf="@+id/mobile_name_list"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/emergency_contact_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" >
+        </ListView>
+
+        <!-- <TextView
+            android:id="@+id/name2id"
+            android:text="Name:" 
+            android:layout_width="80dp"
+            android:layout_below="@id/num1"
+            android:layout_toRightOf="@+id/emerency_contact"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content" /> -->
+
+    </RelativeLayout>  
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/deviceListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:divider="@null" />
+
+</RelativeLayout>
