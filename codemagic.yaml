@@ -18,10 +18,15 @@ workflows:
           source: true
     scripts:
       - name: Set up local properties
-        script: echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"        
+        script: 
+	  echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"        
       - name: Build Android app
         script: 
           ./gradlew assembleDebug  # To generate an .apk use--> ./gradlew assembleRelease
     artifacts:
       - app/build/outputs/**/**/*.aab
       - app/build/outputs/**/**/*.apk
+    cache:
+      cache_paths:
+        - $FLUTTER_ROOT/.pub-cache          # Dart cache
+        - $HOME/.gradle/caches      
